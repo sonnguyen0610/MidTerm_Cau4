@@ -66,6 +66,7 @@ public class Passenger {
     public static Passenger[] inputListPassenger(int n) {
         Passenger[] listPassengers = new Passenger[n];
         for (int i = 0; i < n; i++) {
+            System.out.println("Passenger " + (i + 1) + ": ");
             listPassengers[i] = new Passenger();
             listPassengers[i].input();
         }
@@ -81,6 +82,7 @@ public class Passenger {
         }
     }
 
+    //Sap xep theo tong tien giam dan
     public static Passenger[] sortDecsListPassenger(Passenger[] list) {
         for (int i = 0; i < list.length; i++) {
             for (int j = i + 1; j < list.length; j++) {
