@@ -17,12 +17,12 @@ public class Ticket {
     }
 
     //Nhap thong tin 1 ve
-    public void input() {
+    public static void input() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhap ten chuyen: ");
-        this.tenChuyen = sc.nextLine();
+        String tenChuyen = sc.nextLine();
         System.out.print("Nhap gia ve: ");
-        this.giaVe = sc.nextInt();
+        int giaVe = sc.nextInt();
 
         System.out.print("----Nhap ngay bay---- \nNhap nam:");
         int year = sc.nextInt();
@@ -35,7 +35,8 @@ public class Ticket {
         System.out.print("Nhap phut: ");
         int minu = sc.nextInt();
 
-        this.ngayBay = LocalDateTime.of(year, month, day, hour, minu);
+        LocalDateTime ngayBay = LocalDateTime.of(year, month, day, hour, minu);
+        Ticket tk = new Ticket(tenChuyen, giaVe, ngayBay);
     }
 
     //in ra thong tin 1 ve

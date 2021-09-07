@@ -30,7 +30,7 @@ public class Passenger {
         Ticket[] tickets = new Ticket[soVe];
         for (int i = 0; i < soVe; i++) {
             System.out.println("Ticket " + (i + 1) + ":");
-            tickets[i] = new Ticket();
+//            tickets[i] = new Ticket();// nên viết thanh static
             tickets[i].input();
         }
         this.danhSachVe = tickets;
@@ -83,11 +83,12 @@ public class Passenger {
 
     //Sap xep theo tong tien giam dan
     public static Passenger[] sortDecsListPassenger(Passenger[] list) {
-        for (int i = 0; i < list.length; i++) {
+        for (int i = 0; i < list.length-1; i++) {
             for (int j = i + 1; j < list.length; j++) {
                 if (list[j].sumMoney() > list[i].sumMoney()) {
                     Passenger tmp = list[i];
-                    list[i] = list[j];
+                    list[i] = list[j];// đổi luôn ô nhớ khi gán & k đổi giá trị
+
                     list[j] = tmp;
                 }
             }
