@@ -83,11 +83,15 @@ public class Passenger {
 
     //Sap xep theo tong tien giam dan
     public static Passenger[] sortDecsListPassenger(Passenger[] list) {
-        for (int i = 0; i < list.length-1; i++) {
+        for (int i = 0; i < list.length - 1; i++) {
             for (int j = i + 1; j < list.length; j++) {
                 if (list[j].sumMoney() > list[i].sumMoney()) {
                     Passenger tmp = list[i];
-                    list[i] = list[j];// đổi luôn ô nhớ khi gán & k đổi giá trị
+//                    list[i] = list[j];// đổi luôn ô nhớ khi gán & k đổi giá trị
+                    list[i]._tuoi = list[j]._tuoi;
+                    list[i]._gioiTinh = list[j]._gioiTinh;
+                    list[i]._hoTen = list[j]._hoTen;
+                    list[i].danhSachVe = list[j].danhSachVe;
 
                     list[j] = tmp;
                 }
